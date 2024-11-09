@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagyz: Юридические лица</title>
+    <title>ПРОТОТИП Sagyz</title>
 
     <style>
       input[type="text"], input[type="password"], textarea {
@@ -35,11 +35,17 @@
           border-radius: 20px;
       }
     </style>
+
+    <script>
+      function validateForm(event) {
+        window.location.href = "/main_menu.html";  
+      }
+    </script>
   </head>
 
   <body>
     <div class="overlay">
-      <form action="/register" method="POST">
+      <form onsubmit="validateForm(event)" id="aaa111">
         <div style="width: 402px; height: 874px; position: relative; background: #F5F5F5">
             <div style="left: 30px; top: 67px; position: absolute; color: #1E1E1E; font-size: 40px; font-family: Inter; font-weight: 700; word-wrap: break-word">Регистрация</div>
             <div style="width: 342px; height: 74px; left: 30px; top: 164px; position: absolute">
