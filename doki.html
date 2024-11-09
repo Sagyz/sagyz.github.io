@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QC</title>
+
+    <style>
+      input[type="text"], input[type="password"], textarea {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #333;
+            border: 1px solid #ccc;
+      }
+      
+      .image-container {
+          position: relative;
+          max-width: 600px;
+      }
+
+      .image-container .sigma_a {
+          
+          height: auto;
+      }
+
+      .overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          padding: 20px;
+          border-radius: 20px;
+      }
+
+      .input-button-wrapper .button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="overlay">
+        <form action="/documentapply" method="POST">
+            <div style="width: 402px; height: 874px; position: relative; background: #F5F5F5">
+                <div style="width: 402px; height: 111px; left: 0px; top: 798px; position: absolute; background: #F5F5F5; box-shadow: 0px -12px 13.600000381469727px rgba(56.09, 56.09, 56.09, 0.07); border-radius: 18px"></div>
+                <img style="width: 30px; height: 21.70px; left: 352px; top: 40px; position: absolute;" src="images/design/icons/group.png">
+                <div style="width: 29.32px; height: 30.05px; left: 260px; top: 814px; position: absolute">
+                  <img style="width: 28.50px; height: 30.05px; left: 0px; top: 0px; position: absolute;" src="images/design/icons/graph.png">
+                </div>
+                <img style="width: 24px; height: 31px; left: 42px; top: 813px; position: absolute;" src="images/design/icons/file_active.png">
+                <a href="main_menu.html">
+                    <div style="width: 32px; height: 31px; left: 185px; top: 813px; position: absolute">
+                        <img style="width: 32px; height: 31px; left: 0px; top: 0px; position: absolute;" src="images/design/icons/home.png">
+                      </div>
+                </a>
+                <img style="width: 26px; height: 31px; left: 113px; top: 813px; position: absolute;" src="images/design/icons/shop.png">
+                <a href="kabinet.html">
+                    <div style="width: 28px; height: 31px; left: 332px; top: 813px; position: absolute">
+                        <img style="width: 18px; height: 19px; left: 5px; top: 0px; position: absolute;" src="images/design/icons/vstr_1.png">
+                        <img style="width: 28px; height: 15px; left: 0px; top: 16px; position: absolute" src="images/design/icons/vstr_1.png">
+                      </div>
+                </a>
+                <div style="left: 30px; top: 50px; position: absolute; color: #1E1E1E; font-size: 40px; font-family: Inter; font-weight: 700; line-height: 41.38px; word-wrap: break-word">Собрать<br/>Документы</div>
+                <div style="left: 30px; top: 162px; position: absolute; color: #1E1E1E; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Выберите тип (физ./юр. лицо):</div>
+                <div style="left: 30px; top: 271px; position: absolute; color: #1E1E1E; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Выберите форму:</div>
+                <div input type="text" id="doctype" name="doctype" style="width: 342px; height: 50px; left: 30px; top: 201px; position: absolute; background: #EAEAEA; border-radius: 10px"></div>
+                <div style="left: 30px; top: 380px; position: absolute; color: #1E1E1E; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Выберите период расписки:</div>
+                <div input type="text" id="rastype" name="rastype" style="width: 342px; height: 50px; left: 30px; top: 419px; position: absolute; background: #EAEAEA; border-radius: 10px"></div>
+                <div input type="text" id="formtype" name="formtype" style="width: 342px; height: 50px; left: 30px; top: 310px; position: absolute; background: #EAEAEA; border-radius: 10px"></div>
+                <div style="left: 30px; top: 499px; position: absolute; color: #1E1E1E; font-size: 24px; font-family: Inter; font-weight: 700; word-wrap: break-word">Высчитываем...</div>
+                <div style="width: 166px; height: 120px; left: 30px; top: 542px; position: absolute; background: #EEA0FF; border-radius: 14px"></div>
+                <div style="width: 166px; height: 120px; left: 206px; top: 542px; position: absolute; background: #EEA0FF; border-radius: 14px"></div>
+                <div style="width: 119px; height: 30px; left: 54px; top: 561px; position: absolute; text-align: center; color: #1E1E1E; font-size: 24px; font-family: Inter; font-weight: 700; word-wrap: break-word">+9124$</div>
+                <div style="width: 119px; height: 30px; left: 230px; top: 561px; position: absolute; text-align: center; color: #1E1E1E; font-size: 24px; font-family: Inter; font-weight: 700; word-wrap: break-word">-8512$</div>
+                <div style="left: 54px; top: 596px; position: absolute"><span style="color: #1E1E1E; font-size: 13px; font-family: Inter; font-weight: 700; word-wrap: break-word">Основной поток:<br/></span><span style="color: #1E1E1E; font-size: 13px; font-family: Inter; font-weight: 500; word-wrap: break-word">- Продажи жаймы<br/>(75%)</span></div>
+                <div style="left: 232px; top: 596px; position: absolute"><span style="color: #1E1E1E; font-size: 13px; font-family: Inter; font-weight: 700; word-wrap: break-word">Основной отток:<br/></span><span style="color: #1E1E1E; font-size: 13px; font-family: Inter; font-weight: 500; word-wrap: break-word">- Налоги (tax usa)<br/>(99%)</span></div>
+                <button type="submit">
+                    <div style="width: 342px; height: 60px; left: 30px; top: 692px; position: absolute; background: #5A4EFF; border-radius: 14px"></div>
+                </button>
+                <div style="left: 104px; top: 709px; position: absolute; color: #F5F5F5; font-size: 20px; font-family: Inter; font-weight: 700; word-wrap: break-word">Сгенерировать форму</div>
+              </div>
+        </form>
+    </div>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QC</title>
+
+    <style>
+      input[type="text"], input[type="password"], textarea {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #333;
+            border: 1px solid #ccc;
+      }
+      
+      .image-container {
+          position: relative;
+          max-width: 600px;
+      }
+
+      .image-container .sigma_a {
+          
+          height: auto;
+      }
+
+      .overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          padding: 20px;
+          border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="overlay">
+      <form action="/register" method="POST">
+        <div style="width: 402px; height: 874px; position: relative; background: #F5F5F5">
+          <div style="left: 30px; top: 197px; position: absolute; color: #1E1E1E; font-size: 40px; font-family: Inter; font-weight: 700; word-wrap: break-word">Регистрация</div>
+          <div style="left: 35px; top: 294px; position: absolute; color: #383838; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Имя</div>
+          <div style="left: 35px; top: 393px; position: absolute; color: #383838; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Почта</div>
+          <div style="left: 35px; top: 492px; position: absolute; color: #383838; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Пароль</div>
+          <input type="text" id="name" name="name" required style="width: 342px; height: 45px; left: 30px; top: 323px; position: absolute; background: #EAEAEA; border-radius: 14px">
+          <input type="text" id="email" name="email" required style="width: 342px; height: 45px; left: 30px; top: 422px; position: absolute; background: #EAEAEA; border-radius: 14px">
+          <input type="password" id="name" name="name" required style="width: 342px; height: 45px; left: 30px; top: 521px; position: absolute; background: #EAEAEA; border-radius: 14px">
+          
+          <button type="submit">
+            <div style="width: 342px; height: 50px; left: 30px; top: 627px; position: absolute; background: #1E1E1E; border-radius: 18px"></div>
+            <div style="cursor: pointer; left: 97px; top: 639px; position: absolute; color: #F5F5F5; font-size: 20px; font-family: Inter; font-weight: 700; word-wrap: break-word">Зерегистрироваться</div>
+          </button>
+          
+          <div style="left: 35px; top: 578px; position: absolute; color: #383838; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word">Уже есть аккаунт? <a href="login_form.html">Войдите.</a></div>
+          <div style="left: 30px; top: 250px; position: absolute; color: #1E1E1E; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word">Физическое лицо</div>
+        </div>
+      </form>
+    </div>
+
+
+  </body>
+
+</html>
