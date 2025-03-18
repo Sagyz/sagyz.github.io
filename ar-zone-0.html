@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAR с A-Frame и AR.js</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
+    <style>
+        #popup-info {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 0%;
+            transform: translateX(5%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+    z-index: 1000;
+    max-width: 30%; /* Limit width */
+    word-wrap: break-word; /* Wrap text */
+    text-align: center;
+    max-height: 150px; /* Prevent it from getting too large */
+    overflow-y: auto; /* Enable scrolling if needed */
+        }
+    </style>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <div id="popup-info">Здание советской архитектуры<br><br><div style="color: #06E9D3;">Улица: пр. Ленина 1/2</div><br><br>Вы смотрите на 3D модель Хрущевки, которая была построенная впервые в 1984 году в этом городе.<br><br><div style="color: #06E9D3;">+3 поинтов за посещение<br>+5 поинта за фото</div></div>
+
+    <a-scene embedded arjs>
+        <a-marker preset="hiro" id="marker">
+            <a-entity 
+            gltf-model="/objects/scene.gltf" 
+            scale="0.8 0.8 0.8">
+            </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const marker = document.querySelector("#marker");
+            const popup = document.querySelector("#popup-info");
+
+            marker.addEventListener("markerFound", () => {
+                popup.style.display = "block"; // Show popup
+            });
+
+            marker.addEventListener("markerLost", () => {
+                popup.style.display = "none"; // Hide popup
+            });
+        });
+    </script>
+</body>
+</html>
